@@ -1,5 +1,5 @@
 # Hi there, I'm Tatyana! [](https://github.com/blackcater/blackcater/raw/main/images/Hi.gif) 
-### I am a student of the SkillFactory IT school
+### I am a student of the SkillFactory IT school (https://skillfactory.ru/)
 
 # **My projects**
 1. # <center> [Resume Analysis from HeadHunter]

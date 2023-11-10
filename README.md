@@ -2,7 +2,7 @@
 ### I am a student of the SkillFactory IT school (https://skillfactory.ru/)
 
 # **My projects**
-1. # <center> [Resume Analysis from HeadHunter]
+1. # <center> [Resume Analysis from HeadHunter](https://github.com/tan-st1702/SkillFactory/tree/main/PROJECT-1.%20Анализ%20резюме%20из%20HeadHunter)
 <center> <img src = https://raw.githubusercontent.com/AndreyRysistov/DatasetsForPandas/main/hh%20label.jpg alt="drawing" style="width:400px;">
 
 ### Data:

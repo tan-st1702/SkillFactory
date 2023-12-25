@@ -1,0 +1,2 @@
+class Dumper():
+    pass

@@ -154,3 +154,40 @@ FROM
     sql.matches m /*таблица matches с алиасом m*/
     JOIN sql.teams t ON m.away_team_api_id = t.api_id /*оператор соединения таблиц; таблица teams с алиасом t; условие: away_team_api_id таблицы m равен api_id таблицы t*/
 GROUP BY t.id /*группировка по столбцу id таблицы t*/
+
+/*markdown
+![Alt text](image-1.png)
+*/
+
+/*markdown
+Также, применяя агрегатные функции к соединённым таблицам, обращайте внимание на указание алиасов (или таблиц) при группировке и указании столбцов агрегатных функций. В нашей соединённой таблице есть два столбца с названием id, и если бы мы сформировали запрос без указания таблицы, как указано ниже, то...
+*/
+
+SELECT
+    m.season, /*столбец season таблицы m*/
+    t.long_name, /*столбец long_name таблицы t*/
+    SUM(m.home_team_goals) + SUM(m.away_team_goals) total_goals /*функция суммирования; столбец home_team_goals таблицы m; функция суммирования; столбец away_team_goals таблицы m; новое название столбца*/
+FROM sql.matches m /*таблица matches с алиасом m*/
+JOIN sql.teams t ON t.api_id = m.home_team_api_id OR t.api_id = m.away_team_api_id /*оператор соединения таблиц; таблица teams с алиасом t; условие: home_team_api_id таблицы m равен api_id таблицы t или away_team_api_id таблицы m равен api_id таблицы t*/
+GROUP BY m.season, t.id /*группировка по столбцам season таблицы m и id таблицы t*/
+HAVING SUM(m.home_team_goals) + SUM(m.away_team_goals) > 100 /*оператор фильтрации сгруппированных данных; функция суммирования; home_team_goals таблицы m; функция суммирования; away_team_goals таблицы m; больше 100*/
+
+/*markdown
+# Способы соединения таблиц
+*/
+
+/*markdown
+### ОПЕРАТОРЫ
+*/
+
+/*markdown
+**INNER JOIN** - это тот же JOIN (слово inner в операторе можно опустить).
+*/
+
+/*markdown
+![Alt text](dst3-u2-md3_5_1.gif)
+*/
+
+/*markdown
+![Alt text](image-4.png)
+*/

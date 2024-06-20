@@ -191,3 +191,120 @@ HAVING SUM(m.home_team_goals) + SUM(m.away_team_goals) > 100 /*оператор 
 /*markdown
 ![Alt text](image-4.png)
 */
+
+/*markdown
+В таблице teams есть данные о 299 различных командах — можем проверить это с помощью запроса.
+*/
+
+SELECT 
+COUNT(DISTINCT id) /*оператор подсчёта строк; оператор исключения повторяющихся строк; столбец id*/
+FROM sql.teams /*таблица teams*/
+
+/*markdown
+Теперь добавим к teams таблицу с матчами.
+*/
+
+SELECT 
+COUNT(DISTINCT t.id) /*оператор подсчёта строк; оператор исключения повторяющихся строк; столбец id*/
+FROM 
+sql.teams t /*таблица teams с алиасом t*/
+JOIN sql.matches m ON t.api_id = m.home_team_api_id OR t.api_id = m.away_team_api_id /*оператор соединения inner JOIN; таблица teams с алиасом t; условие: home_team_api_id таблицы m равен api_id таблицы t или away_team_api_id таблицы m равен api_id таблицы t*/
+
+/*markdown
+### LEFT OUTER JOIN И RIGHT OUTER JOIN
+*/
+
+/*markdown
+![Alt text](dst3-u2-md3_5_2.gif)
+*/
+
+/*markdown
+![Alt text](image-6.png)
+*/
+
+/*markdown
+вывести полные названия команд, данных по которым нет в таблице matches.
+*/
+
+SELECT
+    t.long_name,
+    m.id
+FROM sql.teams t
+LEFT JOIN sql.matches m ON t.api_id = m.home_team_api_id OR t.api_id = m.away_team_api_id
+ORDER BY m.id DESC
+
+/*markdown
+Теперь, чтобы выбрать такие команды, которые не принимали участия в матчах, достаточно добавить условие where m.id is null (или любое другое поле таблицы matches).
+*/
+
+SELECT
+    t.long_name
+FROM 
+    sql.teams t
+LEFT JOIN sql.matches m ON t.api_id = m.home_team_api_id OR t.api_id = m.away_team_api_id
+WHERE m.id IS NULL
+
+SELECT
+    t.long_name FROM sql.teams t
+LEFT JOIN sql.matches m ON t.api_id = m.home_team_api_id OR t.api_id = m.away_team_api_id
+WHERE
+    m.season = '2008/2009'
+AND t.long_name = 'KAS Eupen'
+
+/*markdown
+> В ответе Metabase получим No results!, так как вместе с фильтром m.season = '2008/2009' исчезли все строки, значения которых NULL.
+*/
+
+/*markdown
+### FULL OUTER JOIN
+*/
+
+/*markdown
+![Alt text](image-7.png)
+*/
+
+/*markdown
+![Alt text](image-8.png)
+*/
+
+/*markdown
+### CROSS JOIN
+*/
+
+/*markdown
+![Alt text](image-9.png)
+*/
+
+SELECT * /*выбор всех полей*/
+FROM
+    sql.teams /*таблица teams*/
+    CROSS JOIN sql.matches /*таблица matches*/
+
+/*markdown
+Также этот запрос можно записать с помощью INNER JOIN с условием on true — результат будет тот же.
+*/
+
+SELECT * /*выбор всех полей*/
+FROM
+    sql.teams /*таблица teams*/
+    JOIN sql.matches ON TRUE /*оператор соединения INNER JOIN; таблица matches; условие: для всех случаев*/
+
+/*markdown
+### NATURAL JOIN
+*/
+
+/*markdown
+> Ключевое слово **`natural`** в начале оператора **`JOIN`** позволяет не указывать условие соединения таблиц — для соединения будут использованы столбцы с одинаковым названием из этих таблиц.
+*/
+
+/*markdown
+![Alt text](image-10.png)
+*/
+
+/*markdown
+### ОБЩАЯ ЛОГИКА ПОСТРОЕНИЯ ЗАПРОСА С JOIN
+*/
+
+/*markdown
+<div style="width: 100%;"><div style="position: relative; padding-bottom: 55.00000000000001%; padding-top: 0; height: 0;"><iframe title="Модуль SQL-3" frameborder="0" width="2000px" height="1100px" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/617fe0627516f70d8cd39fb0" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+*/

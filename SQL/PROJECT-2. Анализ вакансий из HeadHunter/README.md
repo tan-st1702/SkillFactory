@@ -2,11 +2,11 @@
 
 ## Оглавление
 
-[1. Описание проекта](https://github.com/Dzhambul/HH_vacancies_analisys#описание-проекта)
+[1. Описание проекта](https://github.com/tan-st1702/SkillFactory/tree/main/SQL/PROJECT-2.%20Анализ%20вакансий%20из%20HeadHunter#описание-проекта)
 
-[2. Этапы проекта](https://github.com/Dzhambul/HH_vacancies_analisys#этапы-проекта)
+[2. Этапы проекта](https://github.com/tan-st1702/SkillFactory/tree/main/SQL/PROJECT-2.%20Анализ%20вакансий%20из%20HeadHunter#этапы-проекта)
 
-[3. Результаты](https://github.com/Dzhambul/HH_vacancies_analisys#результаты)
+[3. Результаты](https://github.com/tan-st1702/SkillFactory/tree/main/SQL/PROJECT-2.%20Анализ%20вакансий%20из%20HeadHunter#результаты)
 
 ## Описание проекта
 
@@ -15,7 +15,7 @@
 
 Каждая часть задания состоит из блока практических заданий, которые  необходимо выполнить в jupyter-ноутбуке, и контрольных вопросов на платформе. Задания выполняются последовательно.
 
-:arrow_up:[к оглавлению](https://github.com/Dzhambul/HH_vacancies_analisys#оглавление)
+:arrow_up:[к оглавлению](https://github.com/tan-st1702/SkillFactory/tree/main/SQL/PROJECT-2.%20Анализ%20вакансий%20из%20HeadHunter#оглавление)
 
 Помимо проверки заданий на платформе, предстоит отправить свой код ментору для code-ревью. Для выполнения проекта предоставлен ноутбук-шаблон и требования, согласно которым необходимо оформить своё решение.
 
@@ -34,6 +34,6 @@
 
 ## Результаты
 Выполнены все этапы проекта, задания на платформе выполнены в полном объеме.   
-[Ноутбук с выполненными заданиями ](https://github.com/Dzhambul/HH_vacancies_analisys/blob/master/Project_2_Анализ%20вакансий%20из%20Headhanter.ipynb) 
+[Ноутбук с выполненными заданиями ](https://github.com/tan-st1702/SkillFactory/blob/main/SQL/PROJECT-2.%20Анализ%20вакансий%20из%20HeadHunter/Анализ%20вакансий%20из%20HeadHunter.ipynb) 
 
 :arrow_up: [к оглавлению](https://github.com/Dzhambul/HH_vacancies_analisys#оглавление)

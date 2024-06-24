@@ -36,4 +36,4 @@
 Выполнены все этапы проекта, задания на платформе выполнены в полном объеме.   
 [Ноутбук с выполненными заданиями ](https://github.com/tan-st1702/SkillFactory/blob/main/SQL/PROJECT-2.%20Анализ%20вакансий%20из%20HeadHunter/Анализ%20вакансий%20из%20HeadHunter.ipynb) 
 
-:arrow_up: [к оглавлению](https://github.com/Dzhambul/HH_vacancies_analisys#оглавление)
+:arrow_up: [к оглавлению](https://github.com/tan-st1702/SkillFactory/tree/main/SQL/PROJECT-2.%20Анализ%20вакансий%20из%20HeadHunter#оглавление)
